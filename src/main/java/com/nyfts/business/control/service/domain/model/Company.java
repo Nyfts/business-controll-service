@@ -1,6 +1,6 @@
 package com.nyfts.business.control.service.domain.model;
 
-import com.nyfts.business.control.service.presentation.dto.company.request.CompanyRequestDTO;
+import com.nyfts.business.control.service.presentation.dto.company.CompanyRequestDTO;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Column;

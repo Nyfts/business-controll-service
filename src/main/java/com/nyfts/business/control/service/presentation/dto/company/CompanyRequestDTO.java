@@ -1,4 +1,4 @@
-package com.nyfts.business.control.service.presentation.dto.company.request;
+package com.nyfts.business.control.service.presentation.dto.company;
 
 import java.io.Serializable;
 
