@@ -1,11 +1,8 @@
 package com.nyfts.business.control.service.application.controller;
 
-import com.nyfts.business.control.service.application.service.exception.InformationNotFoundException;
 import com.nyfts.business.control.service.domain.model.Company;
 import com.nyfts.business.control.service.domain.service.CompanyService;
-import com.nyfts.business.control.service.presentation.dto.company.request.CompanyCreateRequestTO;
-import com.nyfts.business.control.service.presentation.dto.company.request.CompanyUpdateRequestTO;
-import com.nyfts.business.control.service.presentation.dto.shared.ErrorResponseTO;
+import com.nyfts.business.control.service.presentation.dto.company.request.CompanyRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,14 +33,16 @@ public class CompanyController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody CompanyCreateRequestTO createRequestTO) {
-        Company company = companyService.create(createRequestTO);
-        return ResponseEntity.ok(company);
+    public ResponseEntity<?> create(@RequestBody CompanyRequestDTO requestDTO) {
+        Company company = Company.fromRequestDTO(requestDTO);
+        Company savedCompany = companyService.create(company);
+        return ResponseEntity.ok(savedCompany);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CompanyUpdateRequestTO updateRequestTO) {
-        Company company = companyService.update(id, updateRequestTO);
-        return ResponseEntity.ok(company);
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CompanyRequestDTO requestDTO) {
+        Company company= Company.fromRequestDTO(requestDTO);
+        Company updatedCompany = companyService.update(id, company);
+        return ResponseEntity.ok(updatedCompany);
     }
 }

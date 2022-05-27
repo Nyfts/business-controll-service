@@ -1,5 +1,6 @@
 package com.nyfts.business.control.service.domain.model;
 
+import com.nyfts.business.control.service.presentation.dto.company.request.CompanyRequestDTO;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Column;
@@ -98,6 +99,15 @@ public class Company implements Serializable {
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    public static Company fromRequestDTO(CompanyRequestDTO companyRequestDTO) {
+        Company company = new Company();
+
+        company.setName(companyRequestDTO.getName());
+        company.setCnpj(companyRequestDTO.getCnpj());
+
+        return company;
     }
 
     @Override
