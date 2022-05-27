@@ -1,10 +1,12 @@
 package com.nyfts.business.control.service.domain.model;
 
+import com.nyfts.business.control.service.infrastructure.persistence.hibernate.listener.CompanyListener;
 import com.nyfts.business.control.service.presentation.dto.company.CompanyRequestDTO;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +17,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
+@EntityListeners(CompanyListener.class)
 @Table(name = "t_company", schema = "business")
 public class Company implements Serializable {
 
