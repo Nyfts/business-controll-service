@@ -1,4 +1,4 @@
 package com.nyfts.business.control.service.application.service.exception;
 
-public class InformationNotFoundException extends Exception {
+public class InformationNotFoundException extends RuntimeException {
 }
