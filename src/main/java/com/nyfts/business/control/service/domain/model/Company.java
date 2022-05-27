@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "t_company")
+@Table(name = "t_company", schema = "business")
 public class Company implements Serializable {
 
     @Id

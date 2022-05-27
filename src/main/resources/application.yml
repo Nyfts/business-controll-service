@@ -2,6 +2,8 @@ spring:
   application:
     name: business-control-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/business-control
-    username: username
-    password: password
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/business-control}
+    username: ${DATABASE_USERNAME:username}
+    password: ${DATABASE_PASSWORD:password}
+  jpa:
+    show-sql: true
