@@ -1,10 +1,10 @@
-package com.nyfts.businesscontrollservice;
+package com.nyfts.business.control.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BusinessControllServiceApplicationTests {
+class BusinessControlServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

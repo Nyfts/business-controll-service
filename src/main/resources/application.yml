@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: business-control-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/business-control
+    username: username
+    password: password

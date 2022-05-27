@@ -1,13 +1,13 @@
-package com.nyfts.businesscontrollservice;
+package com.nyfts.business.control.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BusinessControllServiceApplication {
+public class BusinessControlServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BusinessControllServiceApplication.class, args);
+		SpringApplication.run(BusinessControlServiceApplication.class, args);
 	}
 
 }
